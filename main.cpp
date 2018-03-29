@@ -570,6 +570,9 @@ void ship(int x,int y)
 
 void ship2(int x,int y){
 
+        if(150+x > 1024)
+            increase=0;
+
         int b[] = {20+x,480,50+x,450,150+x,450,180+x,480,20+x,480};
         drawDino(b,10,0.0,0.0,0.0);
 
@@ -581,6 +584,10 @@ void ship2(int x,int y){
 }
 
 void ship3(int x,int y){
+
+    if (915 + x < 0){
+        increase=0;
+    }
         int b[] = {990+x,370,970+x,350,870+x,350,850+x,370,990+x,370};
         drawDino(b,10,0.0,0.0,0.0);
 
@@ -635,9 +642,9 @@ void init()
 void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-    increase+=0.4;
+    increase+=2.0;
     increase2+=10;
-    increaseclouds+=1;
+    increaseclouds+=2;
 	if(showclouds==1){
             drawmoon();
             drawcloud();
@@ -718,3 +725,4 @@ int main(int argc,char ** argv)
 	glutMainLoop();
     return 0;
 }
+
