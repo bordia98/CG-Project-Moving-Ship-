@@ -11,6 +11,9 @@
 
 int flag=0;
 float pos=0,y=0;
+int showclouds=0;
+float increase=0;
+
 
 
 typedef struct edgebucket{
@@ -477,6 +480,28 @@ void ship(int x,int y)
         drawDino(g,10,0.2f,0.0f,0.0f);
 }
 
+void ship2(int x,int y){
+
+        int b[] = {20+x,480,50+x,450,150+x,450,180+x,480,20+x,480};
+        drawDino(b,10,0.0,0.0,0.0);
+
+        int c[] = {95+x,480,95+x,570,105+x,570,105+x,480,95+x,480};
+        drawDino(c,10,0.2,0.0,0.0);
+
+        int d[] = {105+x,570,150+x,500,105+x,500,105+x,570};
+        drawDino(d,8,1.0,1.0,1.0);
+}
+
+void ship3(int x,int y){
+        int b[] = {990+x,370,970+x,350,870+x,350,850+x,370,990+x,370};
+        drawDino(b,10,0.0,0.0,0.0);
+
+        int c[] = {915+x,370,915+x,460,925+x,460,925+x,370,915+x,370};
+        drawDino(c,10,0.2,0.0,0.0);
+
+        int d[] = {915+x,460,850+x,390,915+x,390,915+x,460};
+        drawDino(d,8,1.0,1.0,1.0);
+}
 
 void water1(){
         int b[]= {0,160,80,160,480,100,1024,100,1024,0,0,0,0,160};
@@ -496,6 +521,16 @@ void water2(){
     drawDino(b,10,0.196078f,0.196078f,0.8f,1.0f);
 }
 
+void drawmoon(){
+    int b[]={0,550,0,1024,1024,1024,1024,550,0,550};
+    drawDino(b,10,0.0f,0.0f,0.0f,1.0f);
+
+    int i,j;
+    for(j=0;j<2;j++)
+        for(i=70;i>=0;i--)
+            midpointcircle(450+j,850,i,1.0,1.0,1.0,1.0);
+}
+
 
 void init()
 {
@@ -512,12 +547,21 @@ void init()
 void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	drawsun();
+    increase+=0.2;
+	if(showclouds==1){
+            drawmoon();
+            drawcloud();
+    }
+    else{
+        drawsun();
+        drawcloud();
+    }
 	island();
 	water();
 	water2();
+	ship2(increase,y);
+	ship3(-increase,y);
 	ship(pos,y);
-	drawcloud();
 	water1();
     glutPostRedisplay();
 	glFlush();
@@ -525,34 +569,29 @@ void display(void)
 }
 
 
-void myKeyboardFunc( unsigned char key, int x, int y )
+void myKeyboardFunc(unsigned char key, int x, int y )
 {
-	if(key==37)
-	{
-		pos-=0.1;
-        water();
-        ship(pos,y);
-        water1();
-        glutPostRedisplay();
-        glFlush();
-	};
-	if(key==39)
-	{
-		pos+=0.1;
-        water();
-        ship(pos,y);
-        water1();
-        glutPostRedisplay();
-        glFlush();
-	};
-	/*
-	left arrow: 37
-up arrow: 38
-right arrow: 39
-down arrow: 40
-	*/
+	switch(key){
+    case 'r':
+            {
+                if(showclouds==1){
+                    showclouds=0;
+                }
+                else{
+                    showclouds=1;
+                }
+                glutPostRedisplay();
+                break;
+            }
+    case 'm':{
+            pos+=2;
+            glutPostRedisplay();
+            break;
+    }
 
+	};
 }
+
 
 
 void processSpecialKeys (int key, int mx, int my) {
