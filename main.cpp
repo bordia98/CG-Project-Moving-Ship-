@@ -13,8 +13,8 @@ int flag=0;
 float pos=0,y=0;
 int showclouds=0;
 float increase=0;
-
-
+int increase2=0;
+int increaseclouds=0;
 
 typedef struct edgebucket{
     int ymax;
@@ -364,38 +364,72 @@ void midpointcircle(int X1,int Y1,int r,float ra, float g, float b,float xtra){
 
 
 void drawcloud(){
-        int i,j;
-        for(j=0;j<2;j++)
+    if(800+increaseclouds>1024)
+        increaseclouds=0;
+    int i,j;
+    for(j=0;j<2;j++)
         for(i=50;i>=0;i--){
-            midpointcircle(150+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(190+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(110+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(140+j,820,i,0.80,0.80,0.80,1.0);
-            midpointcircle(140+j,780,i,0.80,0.80,0.80,1.0);
-            midpointcircle(160+j,820,i,0.80,0.80,0.80,1.0);
-            midpointcircle(160+j,780,i,0.80,0.80,0.80,1.0);
+            midpointcircle(150+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(190+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(110+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(140+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(140+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(160+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(160+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+        }
+    for(j=0;j<2;j++)
+        for(i=50;i>=0;i--){
+            midpointcircle(50+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(90+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(10+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(40+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(40+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(60+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(60+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
         }
 
     for(j=0;j<2;j++)
-    for(i=50;i>=0;i--){
-            midpointcircle(550+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(590+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(510+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(540+j,820,i,0.80,0.80,0.80,1.0);
-            midpointcircle(540+j,780,i,0.80,0.80,0.80,1.0);
-            midpointcircle(560+j,820,i,0.80,0.80,0.80,1.0);
-            midpointcircle(560+j,780,i,0.80,0.80,0.80,1.0);
+        for(i=50;i>=0;i--){
+            midpointcircle(550+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(590+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(510+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(540+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(540+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(560+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(560+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
         }
 
     for(j=0;j<2;j++)
-    for(i=50;i>=0;i--){
-            midpointcircle(850+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(890+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(810+j,800,i,0.80,0.80,0.80,1.0);
-            midpointcircle(840+j,820,i,0.80,0.80,0.80,1.0);
-            midpointcircle(840+j,780,i,0.80,0.80,0.80,1.0);
-            midpointcircle(860+j,820,i,0.80,0.80,0.80,1.0);
-            midpointcircle(860+j,780,i,0.80,0.80,0.80,1.0);
+        for(i=50;i>=0;i--){
+            midpointcircle(650+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(690+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(610+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(640+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(640+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(660+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(660+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+        }
+
+
+    for(j=0;j<2;j++)
+        for(i=50;i>=0;i--){
+           midpointcircle(850+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(890+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(810+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(840+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(840+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(860+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(860+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+    }
+    for(j=0;j<2;j++)
+        for(i=50;i>=0;i--){
+           midpointcircle(950+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(990+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(910+j+increaseclouds,800,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(940+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(940+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(960+j+increaseclouds,820,i,0.852941 ,0.852941 ,0.852941,1.0);
+            midpointcircle(960+j+increaseclouds,780,i,0.852941 ,0.852941 ,0.852941,1.0);
     }
 }
 
@@ -439,6 +473,55 @@ void island(){
 
 void ship(int x,int y)
 {
+        if(440+increase2+y>1024){
+            increase2=0;
+        }else{
+            int i,j;
+            for(j=0;j<2;j++)
+                for(i=18;i>=0;i--){
+                midpointcircle(236+x+j,425+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                midpointcircle(233+x+j,430+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                midpointcircle(239+x+j,430+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                if(i-4>0){
+                    midpointcircle(239+x+j,330+increase2,i-4,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    midpointcircle(239+x+j,250+increase2,i-4,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    }
+                }
+        }
+
+        if(440+y+increase2>1024){
+            increase2=0;
+        }else{
+            int i,j;
+            for(j=0;j<2;j++)
+                for(i=18;i>=0;i--){
+                midpointcircle(330+x+j,425+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                midpointcircle(333+x+j,430+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                midpointcircle(327+x+j,430+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                if(i-2>0){
+                    midpointcircle(335+x+j,320+increase2,i-2,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    midpointcircle(335+x+j,240+increase2,i-2,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    }
+                }
+        }
+
+        if(440+y+increase2>1024){
+            increase2=0;
+        }else{
+           int i,j;
+            for(j=0;j<2;j++)
+                for(i=18;i>=0;i--){
+                    midpointcircle(170+x+j,420+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    midpointcircle(173+x+j,425+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    midpointcircle(167+x+j,425+increase2,i,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    if(i-4>0){
+                    midpointcircle(173+x+j,310+increase2,i-4,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    midpointcircle(173+x+j,230+increase2,i-4,0.752941 ,0.752941 ,0.752941 ,1.0);
+                    }
+            }
+        }
+
+
 		int b[] = {20+x,240+y,20+x,220+y,82+x,140+y,438+x,84+y,584+x,196+y,600+x,220+y,20+x,240+y};
 		drawDino(b,14,0.30f,0.06f,0.42f);
 
@@ -470,14 +553,19 @@ void ship(int x,int y)
         int j[]={478+x,262+y,478+x,222+y,514+x,220+y,514+x,254+y,478+x,262+y};
         drawDino(j,10,0.5,0.0,0.0);
 
+
+
         int k[] ={224+x,312+y,224+x,396+y,254+x,396+y,254+x,315+y,224+x,312+y};
         drawDino(k,10,0.2,0.0,0.0);
+
 
         int l[]={318+x,322+y,318+x,406+y,358+x,406+y,358+x,320+y,318+x,322+y};
         drawDino(l,10,0.2,0.0,0.0);
 
+
         int g[]={158+x,304+y,158+x,388+y,188+x,388+y,188+x,310+y,158+x,304+y};
         drawDino(g,10,0.2f,0.0f,0.0f);
+
 }
 
 void ship2(int x,int y){
@@ -547,7 +635,9 @@ void init()
 void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-    increase+=0.2;
+    increase+=0.4;
+    increase2+=10;
+    increaseclouds+=1;
 	if(showclouds==1){
             drawmoon();
             drawcloud();
@@ -591,7 +681,6 @@ void myKeyboardFunc(unsigned char key, int x, int y )
 
 	};
 }
-
 
 
 void processSpecialKeys (int key, int mx, int my) {
