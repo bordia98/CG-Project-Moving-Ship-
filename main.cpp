@@ -281,7 +281,7 @@ void ScanlineFill(float r,float g,float b,float extra)
 }
 
 
-void drawPolyDino(int a[],int sizei)
+void drawfig(int a[],int sizei)
 {
     int count = 0,x1,y1,x2,y2;
     int n=0;
@@ -309,16 +309,16 @@ void drawPolyDino(int a[],int sizei)
 }
 
 
-void drawDino(int a[],int n,float r,float g , float b){
+void draw(int a[],int n,float r,float g , float b){
     initEdgeTable();
-    drawPolyDino(a,n);
+    drawfig(a,n);
     ScanlineFill(r,g,b);
 }
 
 
-void drawDino(int a[],int n,float r,float g , float b,float extra){
+void draw(int a[],int n,float r,float g , float b,float extra){
     initEdgeTable();
-    drawPolyDino(a,n);
+    drawfig(a,n);
     ScanlineFill(r,g,b,extra);
 }
 
@@ -456,7 +456,7 @@ void island(){
     }
 
     int base[] ={500,550,530,560,1024,560,1024,550,500,550};
-    drawDino(base,10,0.91,0.76,0.65);
+    draw(base,10,0.91,0.76,0.65);
 
     for(j=0;j<2;j++)
         for(i=70;i>0;i--){
@@ -467,7 +467,7 @@ void island(){
             midpointcircle(275+j,520,i,0.0,1.0,0.0,1.0);
     }
     int base2[] ={0,550,0,560,320,560,350,550,100,550};
-    drawDino(base2,10,0.91,0.76,0.65);
+    draw(base2,10,0.91,0.76,0.65);
 }
 
 
@@ -523,48 +523,48 @@ void ship(int x,int y)
 
 
 		int b[] = {20+x,240+y,20+x,220+y,82+x,140+y,438+x,84+y,584+x,196+y,600+x,220+y,20+x,240+y};
-		drawDino(b,14,0.30f,0.06f,0.42f);
+		draw(b,14,0.30f,0.06f,0.42f);
 
         int c[] = {70+x,234+y,70+x,256+y,478+x,262+y,478+x,262+y,478+x,222+y,70+x,238+y,70+x,234+y};
-        drawDino(c,12,0.70f,0.0f,0.0f);
+        draw(c,12,0.70f,0.0f,0.0f);
 
 
         int m[] = {70+x,235+y,70+x,256+y,478+x,262+y,478+x,262+y,478+x,222+y,70+x,238+y};
-        drawDino(m,10,0.70f,0.0f,0.0f);
+        draw(m,10,0.70f,0.0f,0.0f);
 
 		int d[] = {90+x,258+y,90+x,280+y,466+x,298+y,466+x,262+y};
-		drawDino(d,8,1.0f,1.0f,1.0f);
+		draw(d,8,1.0f,1.0f,1.0f);
 
 		int e[] = {90+x,258+y,90+x,280+y,466+x,298+y,466+x,262+y,90+x,258+y};
-		drawDino(e,10,1.0f,1.0f,1.0f);
+		draw(e,10,1.0f,1.0f,1.0f);
 
         int f[] = {102+x,302+y,102+x,280+y,442+x,298+y,442+x,330+y,102+x,302+y};
-        drawDino(f,10,0.3f,0.3f,0.3f);
+        draw(f,10,0.3f,0.3f,0.3f);
 
         int n[] = {102+x,302+y,102+x,280+y,442+x,298+y,442+x,330+y};
-        drawDino(n,8,0.3f,0.3f,0.3f);
+        draw(n,8,0.3f,0.3f,0.3f);
 
         int h[] ={442+x,328+y,442+x,298+y,494+x,294+y,494+x,324+y,442+x,328+y};
-        drawDino(h,10,0.4f,0.4f,0.4f);
+        draw(h,10,0.4f,0.4f,0.4f);
 
         int i[]={466+x,298+y,466+x,262+y,508+x,256+y,508+x,290+y,466+x,298+y};
-        drawDino(i,10,0.8f,0.8f,0.8f);
+        draw(i,10,0.8f,0.8f,0.8f);
 
         int j[]={478+x,262+y,478+x,222+y,514+x,220+y,514+x,254+y,478+x,262+y};
-        drawDino(j,10,0.5,0.0,0.0);
+        draw(j,10,0.5,0.0,0.0);
 
 
 
         int k[] ={224+x,312+y,224+x,396+y,254+x,396+y,254+x,315+y,224+x,312+y};
-        drawDino(k,10,0.2,0.0,0.0);
+        draw(k,10,0.2,0.0,0.0);
 
 
         int l[]={318+x,322+y,318+x,406+y,358+x,406+y,358+x,320+y,318+x,322+y};
-        drawDino(l,10,0.2,0.0,0.0);
+        draw(l,10,0.2,0.0,0.0);
 
 
         int g[]={158+x,304+y,158+x,388+y,188+x,388+y,188+x,310+y,158+x,304+y};
-        drawDino(g,10,0.2f,0.0f,0.0f);
+        draw(g,10,0.2f,0.0f,0.0f);
 
 }
 
@@ -574,13 +574,13 @@ void ship2(int x,int y){
             increase=0;
 
         int b[] = {20+x,480,50+x,450,150+x,450,180+x,480,20+x,480};
-        drawDino(b,10,0.0,0.0,0.0);
+        draw(b,10,0.0,0.0,0.0);
 
         int c[] = {95+x,480,95+x,570,105+x,570,105+x,480,95+x,480};
-        drawDino(c,10,0.2,0.0,0.0);
+        draw(c,10,0.2,0.0,0.0);
 
         int d[] = {105+x,570,150+x,500,105+x,500,105+x,570};
-        drawDino(d,8,1.0,1.0,1.0);
+        draw(d,8,1.0,1.0,1.0);
 }
 
 void ship3(int x,int y){
@@ -589,36 +589,36 @@ void ship3(int x,int y){
         increase=0;
     }
         int b[] = {990+x,370,970+x,350,870+x,350,850+x,370,990+x,370};
-        drawDino(b,10,0.0,0.0,0.0);
+        draw(b,10,0.0,0.0,0.0);
 
         int c[] = {915+x,370,915+x,460,925+x,460,925+x,370,915+x,370};
-        drawDino(c,10,0.2,0.0,0.0);
+        draw(c,10,0.2,0.0,0.0);
 
         int d[] = {915+x,460,850+x,390,915+x,390,915+x,460};
-        drawDino(d,8,1.0,1.0,1.0);
+        draw(d,8,1.0,1.0,1.0);
 }
 
 void water1(){
         int b[]= {0,160,80,160,480,100,1024,100,1024,0,0,0,0,160};
-    drawDino(b,14,0.196078f,0.196078f,0.8f,1.0f);
+    draw(b,14,0.196078f,0.196078f,0.8f,1.0f);
 }
 
 
 void water()
 {
         int b[] = {80,160,1024,160,1024,100,480,100,80,160};
-    drawDino(b,10,0.196078f,0.196078f,0.8f,1.0f);
+    draw(b,10,0.196078f,0.196078f,0.8f,1.0f);
 }
 
 
 void water2(){
     int b[]={0,150,0,550,1024,550,1024,150,0,150};
-    drawDino(b,10,0.196078f,0.196078f,0.8f,1.0f);
+    draw(b,10,0.196078f,0.196078f,0.8f,1.0f);
 }
 
 void drawmoon(){
     int b[]={0,550,0,1024,1024,1024,1024,550,0,550};
-    drawDino(b,10,0.0f,0.0f,0.0f,1.0f);
+    draw(b,10,0.0f,0.0f,0.0f,1.0f);
 
     int i,j;
     for(j=0;j<2;j++)
@@ -629,7 +629,7 @@ void drawmoon(){
 
 void init()
 {
-	glClearColor( 0.196078,0.6,0.8,0.0);
+	glClearColor( 0.8,1.0,1.0,1.0);
 	glColor3f(1.0,0.0,0.0);
 	glLineWidth(3.0);
 	glMatrixMode(GL_PROJECTION);
@@ -693,11 +693,11 @@ void myKeyboardFunc(unsigned char key, int x, int y )
 void processSpecialKeys (int key, int mx, int my) {
     switch(key){
     case GLUT_KEY_LEFT :
-        pos-=1.0;
+        pos-=2.0;
         glutPostRedisplay();
         break;
     case GLUT_KEY_RIGHT :
-        pos+=1.0;
+        pos+=2.0;
         glutPostRedisplay();
         break;
     case GLUT_KEY_UP :
